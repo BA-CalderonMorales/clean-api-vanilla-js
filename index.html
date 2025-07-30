@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px;
+            resize: vertical;
+        }
+        .status {
+            background-color: #e3f2fd;
+            border: 1px solid #bbdefb;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clean API Library Test</h1>
+    <p>Testing the <code>@ba-calderonmorales/clean-api</code> library with JSONPlaceholder API.</p>
+
+    <div id="status" class="status">Loading...</div>
+
+    <div class="container">
+        <h2>GET Requests</h2>
+        <button onclick="testGet()">Get Users</button>
+        <button onclick="testGetPosts()">Get Posts</button>
+        <div id="get-output" class="output"></div>
+    </div>
+
+    <div class="container">
+        <h2>POST Request</h2>
+        <input type="text" id="post-name" placeholder="Name" value="John Doe">
+        <input type="email" id="post-email" placeholder="Email" value="john@example.com">
+        <button onclick="testPost()">Create User</button>
+        <div id="post-output" class="output"></div>
+    </div>
+
+    <div class="container">
+        <h2>PUT Request</h2>
+        <input type="number" id="put-id" placeholder="User ID" value="1">
+        <input type="text" id="put-name" placeholder="Updated Name" value="Jane Doe">
+        <input type="email" id="put-email" placeholder="Updated Email" value="jane@example.com">
+        <button onclick="testPut()">Update User</button>
+        <div id="put-output" class="output"></div>
+    </div>
+
+    <div class="container">
+        <h2>PATCH Request</h2>
+        <input type="number" id="patch-id" placeholder="User ID" value="1">
+        <textarea id="patch-data" placeholder="JSON data">{"name": "Patched User"}</textarea>
+        <button onclick="testPatch()">Patch User</button>
+        <div id="patch-output" class="output"></div>
+    </div>
+
+    <div class="container">
+        <h2>DELETE Request</h2>
+        <input type="number" id="delete-id" placeholder="User ID" value="1">
+        <button onclick="testDelete()">Delete User</button>
+        <div id="delete-output" class="output"></div>
+    </div>
+
+    <div class="container">
+        <h2>Error Handling</h2>
+        <button onclick="testError()">Test Error</button>
+        <div id="error-output" class="output"></div>
+    </div>
+
+    <script src="api-test.js"></script>
+</body>
+</html>

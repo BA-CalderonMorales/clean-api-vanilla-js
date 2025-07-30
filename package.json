@@ -1,5 +1,14 @@
 {
+  "name": "clean-api-vanilla-js-test",
+  "version": "1.0.0",
+  "description": "Simple test of @ba-calderonmorales/clean-api library",
+  "main": "api-test.js",
+  "scripts": {
+    "test": "node api-test.js"
+  },
   "dependencies": {
-    "@ba-calderonmorales/clean-api": "^0.0.2"
-  }
+    "@ba-calderonmorales/clean-api": "^0.0.3",
+    "node-fetch": "^2.7.0"
+  },
+  "license": "MIT"
 }
